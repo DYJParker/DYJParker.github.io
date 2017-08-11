@@ -7,13 +7,13 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Site Title"
+title                    : "Dave Parker"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : "Dave Parker"
+description              : "Dave Parker's portfolio"
+url                      : "https://dyjparker.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : dyjparker/minimal-mistakes
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -67,6 +67,8 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://www.linkedin.com/in/dyjparker/"
+    - 
 
 # Analytics
 analytics:
@@ -77,11 +79,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  name             : "Dave Parker"
+  avatar           : "/assets/images/GHheadshot.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Android dev, mechanical engineer, nerd."
+  location         : "NYC"
+  email            : "DYJParker@gmail.com"
   uri              :
   bitbucket        :
   codepen          :
@@ -89,13 +91,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "dyjparker"
   gitlab           :
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : "dyjparker"
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
@@ -173,14 +175,14 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+# paginate: nil # amount of posts to show
+# paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
 gems:
-  - jekyll-paginate
+  #- jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -188,7 +190,7 @@ gems:
 
 # mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-paginate
+  #- jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -231,17 +233,31 @@ compress_html:
   ignore:
     envs: development
 
-
+collections:
+  docs:
+    output: false
+    permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
+    
 # Defaults
 defaults:
-  # _posts
+  # _projects
   - scope:
-      path: ""
-      type: posts
+      path: "_projects"
+      type: projects
     values:
       layout: single
       author_profile: true
-      read_time: true
-      comments: # true
+      # read_time: true
+      # comments: # true
       share: true
-      related: true
+      # related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true

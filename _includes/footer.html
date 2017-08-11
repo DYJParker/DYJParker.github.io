@@ -1,24 +1,150 @@
 <div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-    {% if site.twitter.username %}
-      <li><a href="https://twitter.com/{{ site.twitter.username }}"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-    {% endif %}
-    {% if site.facebook.username %}
-      <li><a href="https://facebook.com/{{ site.facebook.username }}"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
-    {% endif %}
-    {% if site.author.github %}
-      <li><a href="http://github.com/{{ site.author.github }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    {% endif %}
-    {% if site.author.gitlab %}
-      <li><a href="http://gitlab.com/{{ site.author.gitlab }}"><i class="fa fa-fw fa-gitlab" aria-hidden="true"></i> Gitlab</a></li>
-    {% endif %}
-    {% if site.author.bitbucket %}
-      <li><a href="http://bitbucket.org/{{ site.author.bitbucket }}"><i class="fa fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
-    {% endif %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | absolute_url }}{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+	<ul class="social-icons">
+	{% if page.layout == 'splash' %}
+		{% if site.author.email %}
+		  <li><a href="mailto:{{ site.author.email }}">
+		  <meta itemprop="email" content="{{ site.author.email }}" />
+		  <i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}
+		  </a></li>
+		{% endif %}
+
+		{% if site.author.keybase %}
+			<li><a href="https://keybase.io/{{ site.author.keybase }}" itemprop="sameAs"><i class="fa fa-fw fa-key" aria-hidden="true"></i> Keybase
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.twitter %}
+			<li><a href="https://twitter.com/{{ site.author.twitter }}" itemprop="sameAs"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.facebook %}
+			<li><a href="https://www.facebook.com/{{ site.author.facebook }}" itemprop="sameAs"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.google_plus %}
+			<li><a href="https://plus.google.com/+{{ site.author.google_plus }}" itemprop="sameAs"><i class="fa fa-fw fa-google-plus-square" aria-hidden="true"></i> Google+
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.linkedin %}
+			<li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" itemprop="sameAs"><i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.xing %}
+			<li><a href="https://www.xing.com/profile/{{ site.author.xing }}" itemprop="sameAs"><i class="fa fa-fw fa-xing-square" aria-hidden="true"></i> XING
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.instagram %}
+			<li><a href="https://instagram.com/{{ site.author.instagram }}" itemprop="sameAs"><i class="fa fa-fw fa-instagram" aria-hidden="true"></i> Instagram
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.tumblr %}
+			<li><a href="https://{{ site.author.tumblr }}.tumblr.com" itemprop="sameAs"><i class="fa fa-fw fa-tumblr-square" aria-hidden="true"></i> Tumblr
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.bitbucket %}
+			<li><a href="https://bitbucket.org/{{ site.author.bitbucket }}" itemprop="sameAs"><i class="fa fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.github %}
+			<li><a href="https://github.com/{{ site.author.github }}" itemprop="sameAs"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.stackoverflow %}
+			<li><a href="https://www.stackoverflow.com/users/{{ site.author.stackoverflow }}" itemprop="sameAs"><i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.lastfm %}
+			<li><a href="https://last.fm/user/{{ site.author.lastfm }}" itemprop="sameAs"><i class="fa fa-fw fa-lastfm-square" aria-hidden="true"></i> Last.fm
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.dribbble %}
+			<li><a href="https://dribbble.com/{{ site.author.dribbble }}" itemprop="sameAs"><i class="fa fa-fw fa-dribbble" aria-hidden="true"></i> Dribbble
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.pinterest %}
+			<li><a href="https://www.pinterest.com/{{ site.author.pinterest }}" itemprop="sameAs"><i class="fa fa-fw fa-pinterest" aria-hidden="true"></i> Pinterest
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.foursquare %}
+			<li><a href="https://foursquare.com/{{ site.author.foursquare }}" itemprop="sameAs"><i class="fa fa-fw fa-foursquare" aria-hidden="true"></i> Foursquare
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.steam %}
+			<li><a href="https://steamcommunity.com/id/{{ site.author.steam }}" itemprop="sameAs"><i class="fa fa-fw fa-steam-square" aria-hidden="true"></i> Steam
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.youtube %}
+		  {% if site.author.youtube contains "://" %}
+			  <li><a href="{{ site.author.youtube }}" itemprop="sameAs"><i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+			  </a></li>
+			  {% else site.author.youtube %}
+			  <li><a href="https://www.youtube.com/user/{{ site.author.youtube }}" itemprop="sameAs"><i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+			  </a></li>
+			  {% endif %}
+		{% endif %}
+
+		{% if site.author.soundcloud %}
+			<li><a href="https://soundcloud.com/{{ site.author.soundcloud }}" itemprop="sameAs"><i class="fa fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.weibo %}
+			<li><a href="https://www.weibo.com/{{ site.author.weibo }}" itemprop="sameAs"><i class="fa fa-fw fa-weibo" aria-hidden="true"></i> Weibo
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.flickr %}
+			<li><a href="https://www.flickr.com/{{ site.author.flickr }}" itemprop="sameAs"><i class="fa fa-fw fa-flickr" aria-hidden="true"></i> Flickr
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.codepen %}
+			<li><a href="https://codepen.io/{{ site.author.codepen }}" itemprop="sameAs"><i class="fa fa-fw fa-codepen" aria-hidden="true"></i> CodePen
+			</a></li>
+		  {% endif %}
+
+		{% if site.author.vine %}
+			<li><a href="https://vine.co/u/{{ site.author.vine }}" itemprop="sameAs"><i class="fa fa-fw fa-vine" aria-hidden="true"></i> Vine
+			</a></li>
+		{% endif %}
+	{% else %}
+		  
+		{% if site.data.ui-text[site.locale].follow_label %}
+          <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
+        {% endif %}
+        {% if site.twitter.username %}
+          <li><a href="https://twitter.com/{{ site.twitter.username }}"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        {% endif %}
+        {% if site.facebook.username %}
+          <li><a href="https://facebook.com/{{ site.facebook.username }}"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        {% endif %}
+        {% if site.author.github %}
+          <li><a href="http://github.com/{{ site.author.github }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        {% endif %}
+        {% if site.author.gitlab %}
+          <li><a href="http://gitlab.com/{{ site.author.gitlab }}"><i class="fa fa-fw fa-gitlab" aria-hidden="true"></i> Gitlab</a></li>
+        {% endif %}
+        {% if site.author.bitbucket %}
+          <li><a href="http://bitbucket.org/{{ site.author.bitbucket }}"><i class="fa fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
+        {% endif %}
+        <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | absolute_url }}{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+		  
+	{% endif %}
   </ul>
 </div>
 

@@ -66,6 +66,7 @@
   overflow: hidden;
   img {
     width: 100%;
+	flex: none;
   }
 }
 
@@ -177,6 +178,10 @@
   }
 
   .archive__item-teaser {
+  
+    display: flex;
+    justify-content: center;
+	align-items: center;
 
     @include breakpoint($small) {
       max-height: 200px;

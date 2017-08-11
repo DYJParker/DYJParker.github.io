@@ -134,6 +134,8 @@
           animation: $intro-transition;
   -webkit-animation-delay: 0.25s;
           animation-delay: 0.25s;
+  background-size: cover;
+  background-position: center;
 
   &--overlay {
     position: relative;
@@ -142,12 +144,14 @@
     @include clearfix;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center bottom;
     -webkit-animation: $intro-transition;
             animation: $intro-transition;
     -webkit-animation-delay: 0.25s;
             animation-delay: 0.25s;
-
+	
+	&.match {background-color: $header-color;}
+	
     a {
       color: #fff;
     }

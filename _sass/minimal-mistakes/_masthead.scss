@@ -4,7 +4,8 @@
 
 .masthead {
   position: relative;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 0px solid $border-color;
+  background-color: $header-color;
   -webkit-animation: $intro-transition;
           animation: $intro-transition;
   -webkit-animation-delay: 0.15s;
@@ -29,6 +30,7 @@
 
     nav {
       z-index: 10;
+	  background-color: $header-color;
     }
 
     a {
@@ -38,6 +40,7 @@
 }
 
 .site-title {
+  background-color: $header-color;
   display: -webkit-box;
   display: flex;
   padding: 0.5rem 0;
@@ -52,6 +55,7 @@
   float: left;
   margin-left: 0;
   margin-right: 0;
+  background-color: $header-color;
   width: 100%;
   clear: both;
 
