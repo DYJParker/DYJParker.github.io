@@ -2,6 +2,53 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+// $body-color : #455A64; // pointless!
+$background-color : #455A64;
+$text-color : rgba(#fff, .87);
+$link-color : #536DFE;
+$primary-color : rgba(#fff, .12);
+$masthead-link-color-hover : #536DFE;
+$masthead-link-color : lighten($masthead-link-color-hover, 15%);
+$border-color: rgba(#fff, .12);
+$header-color: #263238;
+$border-radius: 12px;
+
 @charset "utf-8";
 
 @import "minimal-mistakes";
+
+.smallHidden {
+  display: none;
+  @include breakpoint($large) {
+    display: inherit;
+  }
+}
+
+.project_link {
+  display: block;
+  height: auto;
+  $play-link-width: 564px;
+  $play-link-height: 168px;
+  width: $play-link-width/3;
+  margin: 0px auto $play-link-height/3/4;
+  @include breakpoint($large) {
+    width: $play-link-width/2;
+	margin: 0px auto $play-link-height/3/4;
+  }
+  
+  
+  .enbiggen{
+    font-weight: bold;
+	font-size: $type-size-3;
+  }
+}
+
+figure.gal {
+  background-color: $primary-color;
+  padding: 1em;
+  border-radius: $border-radius;
+}
+
+.btn:hover {
+  background-color: $masthead-link-color-hover;
+}
