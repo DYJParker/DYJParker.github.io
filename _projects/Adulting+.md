@@ -31,6 +31,6 @@ The program features:
 - A strong emphasis on abstraction and encapsulation, for ease of code-legibility, maintenance, and ongoing development.
 
 <a class="project_link" href='https://play.google.com/store/apps/details?id=com.dave.adulting&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='/assets/images/google-play-badge.png'/></a>
-<a href="https://github.com/DYJParker/DYJParker.github.io" class="btn project_link">source code available on<br><span class="enbiggen"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</span></a>
+<a href="https://github.com/DYJParker/ADI_Portfolio_Project" class="btn project_link">source code available on<br><span class="enbiggen"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</span></a>
 
 {% include gallery class="gal" %}
